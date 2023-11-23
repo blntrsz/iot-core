@@ -27,14 +27,15 @@ export async function handler(evt: any) {
         Version: "2012-10-17",
         Statement: [
           {
-            Action: "iot:Receive",
+            // subscribe to all topics that matches `topic/*` * is a wildcard
+            Action: "iot:*",
             Effect: "Allow",
-            Resource: `arn:aws:iot:${process.env.REGION}:${process.env.ACCOUNT}:topic/*`,
+            Resource: `arn:aws:iot:${process.env.REGION}:${process.env.ACCOUNT}:topic/topic/*`,
           },
           {
-            Action: "iot:Subscribe",
+            Action: "iot:*",
             Effect: "Allow",
-            Resource: `arn:aws:iot:${process.env.REGION}:${process.env.ACCOUNT}:topicfilter/*`,
+            Resource: `arn:aws:iot:${process.env.REGION}:${process.env.ACCOUNT}:topicfilter/topic/*`,
           },
         ],
       },

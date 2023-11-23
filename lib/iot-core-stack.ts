@@ -27,14 +27,6 @@ export class IotCoreStack extends cdk.Stack {
       },
     });
 
-    // authorizerFn.addToRolePolicy(
-    //   new PolicyStatement({
-    //     effect: Effect.ALLOW,
-    //     resources: ["*"],
-    //     actions: ["iot:*"],
-    //   }),
-    // );
-
     const authorizer = new CfnAuthorizer(this, "authorizer", {
       status: "ACTIVE",
       authorizerName: "authorizer",
