@@ -1,7 +1,7 @@
 const { iot, mqtt } = require("aws-iot-device-sdk-v2");
 const crypto = require("node:crypto");
 
-const IOT_HOST = "a3mnh062a1dtv6-ats.iot.eu-central-1.amazonaws.com";
+const IOT_HOST = "your iot host";
 
 const config = iot.AwsIotMqttConnectionConfigBuilder.new_with_websockets()
   .with_clean_session(true)
